@@ -1,0 +1,30 @@
+<div>
+    <datalist id="categories">
+        <option value="Продукты" />
+        <option value="Молочные продукты" />
+        <option value="Хлебные изделия" />
+    </datalist>
+    <h3 align="center">Изменить продукт</h3>
+
+    <form novalidate ng-submit="putProduct()" >
+        <div class="mb-3">
+            <label  class="form-label">ID</label>
+            <input id="id" readonly type="number" class="form-control" value="" ng-model="put_product.id">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Название</label>
+            <input id="title" type="text" class="form-control" value="" ng-model="put_product.title">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Цена</label>
+            <input id="price" type="number" class="form-control" value="" ng-model="put_product.price">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">Название категории</label>
+            <input id="categoryTitle" type="text" list="categories" class="form-control" value="" ng-model="put_product.categoryTitle">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Изменить</button>
+    </form>
+
+</div>
