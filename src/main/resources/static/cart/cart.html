@@ -1,0 +1,59 @@
+<div>
+    <h2 align="center">Список продуктов в корзине</h2>
+    <table class="table" border="">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th>Сумма</th>
+            <th></th>
+            <!--            <th></th>-->
+            <!--            <th></th>-->
+
+        </tr>
+        </thead>
+        <tbody >
+
+        <tr ng-repeat="p in productsCart.content">
+
+            <td>{{p.title}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.amount}}</td>
+            <td>{{p.price * p.amount}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="deleteProduct(p.id)" >Удалить</button>
+            </td>
+        </tr>
+        </tbody>
+        <tr id="trItog" style="display: none">
+            <th>Итого</th>
+            <th></th>
+            <th></th>
+            <th id="sumItog"></th>
+            <th></th>
+        </tr>
+    </table>
+    <p></p>
+    <button type="button" class="btn btn-primary" ng-click="deleteProductAll()" >Оплатить</button>
+    <p></p>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" aria-label="Previous" ng-click="prevPage()">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <li class="page-item" ng-repeat="pageIndex in paginationArray">
+                <button class="page-link" ng-click="loadProducts(pageIndex)">{{pageIndex}}</button>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" aria-label="Next" ng-click="nextPage()">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

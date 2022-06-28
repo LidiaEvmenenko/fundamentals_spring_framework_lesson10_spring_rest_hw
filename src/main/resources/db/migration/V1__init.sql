@@ -8,6 +8,14 @@ values ('Продукты'),
  ('Молочные продукты'),
  ('Хлебные изделия');
 
+ create table cart
+ (
+     id          bigserial primary key,
+     title       varchar(255),
+     price       int,
+     amount      int
+ );
+
 create table if not exists products
 (
     id          bigserial primary key,
